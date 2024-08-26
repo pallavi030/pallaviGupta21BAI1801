@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess-like Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        
+        #board {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 2px;
+            justify-content: center; /* Center the grid */
+            margin: 7 auto; /* Center the grid horizontally */
+        }
+
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #f0f0f0;
+        }
+
+        .A { background-color: lightblue; }
+        .B { background-color: lightcoral; }
+
+        #moveHistory {
+            white-space: pre-wrap; /* Preserve line breaks in move history */
+            text-align: left; /* Align text to the left */
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid white;
+            background-color: #333;
+        }
+        .large-text {
+            font-size: 12px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess-like Game</h1>
+    <h2 id="turn"></h2>
+    <div id="pieceMovementGuide">
+        <h4>Piece Movement Guide</h4>
+        <p class="large-text">Pawn (P): Moves 1 step in any direction.</p>
+        <p class="large-text" >Hero1 (H1): Moves 2 steps in any direction.</p>
+        <p class="large-text">Hero2 (H2): Moves 2 steps diagonally.</p>
+        <p class="large-text">Hero3 (H3): Moves 2 steps in one direction, then 1 step perpendicular.</p>
+    </div>
+    <div id="board"></div>
+    <p id="status"></p>
+    <div id="moveHistory">Move History:</div>
+    <script src="client.js"></script>
+</body>
+</html>
