@@ -1,5 +1,5 @@
 const WebSocket = require('ws');
-const Game = require('./game/gameLogic');
+const Game = require('./gameLogic');
 
 const server = new WebSocket.Server({ port: 8080 });
 
